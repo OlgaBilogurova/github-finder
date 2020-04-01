@@ -22,6 +22,12 @@ nav h1 {
   padding: 10px;
 }
 
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+}
+
 .search {
   text-align: center;
   background-color: lightgray;
@@ -36,25 +42,26 @@ nav h1 {
   outline: none;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  border: none;
+.message.failed {
+  background-color: red;
+  color: white;
+  padding: 10px;
 }
-.flex-container .profile-info-wrap {
+
+.profile-info-wrap {
   flex: 30%;
 }
-.flex-container .profile-info-wrap .profile-img {
+.profile-info-wrap .profile-img {
   max-width: 300px;
 }
-.flex-container .profile-info-wrap .profile-img img {
+.profile-info-wrap .profile-img img {
   min-width: 100px;
   width: 100%;
   height: auto;
   display: block;
   box-shadow: 0 2px 5px lightgrey;
 }
-.flex-container .profile-info-wrap .profile-img .view-link {
+.profile-info-wrap .profile-img .view-link {
   display: block;
   background-color: white;
   border: 2px solid #2196F3;
@@ -67,48 +74,49 @@ nav h1 {
   font-weight: bold;
   transition: 0.2s ease;
 }
-.flex-container .profile-info-wrap .profile-img .view-link:hover {
+.profile-info-wrap .profile-img .view-link:hover {
   background-color: #2196F3;
   border: 2px solid #2196F3;
   color: white;
 }
-.flex-container .profile-badges-wrap {
+
+.profile-badges-wrap {
   flex: 70%;
 }
-.flex-container .profile-badges-wrap .profile-badges {
+.profile-badges-wrap .profile-badges {
   display: flex;
   justify-content: center;
   margin: 41px 0 30px;
 }
-.flex-container .profile-badges-wrap .profile-badges .badge {
+.profile-badges-wrap .profile-badges .badge {
   margin: 0 5px;
   border: 1px solid lightgray;
   padding: 5px;
   border-radius: 5px;
 }
-.flex-container .profile-badges-wrap .profile-badges .badge.badge-blue {
+.profile-badges-wrap .profile-badges .badge.badge-blue {
   border: 1px solid #2196F3;
 }
-.flex-container .profile-badges-wrap .profile-badges .badge.badge-yellow {
+.profile-badges-wrap .profile-badges .badge.badge-yellow {
   border: 1px solid orange;
 }
-.flex-container .profile-badges-wrap .profile-badges .badge.badge-green {
+.profile-badges-wrap .profile-badges .badge.badge-green {
   border: 1px solid forestgreen;
 }
-.flex-container .profile-badges-wrap .profile-badges .badge.badge-purple {
+.profile-badges-wrap .profile-badges .badge.badge-purple {
   border: 1px solid mediumpurple;
 }
-.flex-container .profile-badges-wrap .profile-about {
+.profile-badges-wrap .profile-about {
   padding-left: 10px;
 }
-.flex-container .profile-badges-wrap .profile-about .profile-about-item {
+.profile-badges-wrap .profile-about .profile-about-item {
   display: block;
   list-style-type: none;
   border: 1px solid lightgray;
   padding: 8px;
   border-collapse: collapse;
 }
-.flex-container .profile-badges-wrap .profile-about .profile-about-item:not(:last-child) {
+.profile-badges-wrap .profile-about .profile-about-item:not(:last-child) {
   border-bottom: none;
 }
 

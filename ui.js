@@ -1,9 +1,13 @@
 class UI {
     constructor() {
         this.profile = document.getElementById('profile');
+        this.msgBox = document.getElementById('message');
     }
 
     showProfile(user){
+        // Remove all alerts
+        this.clearAlert();
+
         // Validate fields
         if (user.company === null) user.company = '-';
         if (user.blog === '') user.blog = '-';
@@ -40,5 +44,31 @@ class UI {
 
         // Add border to profile section
         this.profile.style.border = '1px solid lightgray';
+    }
+
+    showAlert(message, className) {
+        this.msgBox = document.getElementById('message');
+        this.msgBox.classList.add(className);
+        this.msgBox.innerText = message;
+
+        // Remove alert after 3 sec
+        setTimeout(() => {
+            this.clearAlert();
+        }, 3000);
+    }
+
+    clearAlert() {
+        // Remove class
+        if (this.msgBox.classList.contains('failed')) this.msgBox.classList.remove('failed');
+
+        // Clear message-box
+        this.msgBox.innerText = '';
+    }
+
+    clearProfile() {
+        this.profile.innerHTML = '';
+
+        // Remove border to profile section
+        this.profile.style.border = 'none';
     }
 }
