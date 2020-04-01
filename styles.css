@@ -16,7 +16,7 @@ nav h1 {
   margin: 0;
 }
 
-.search, .profile, .repo {
+.search, .profile {
   border: 1px solid lightgray;
   margin: 5px 0;
   padding: 10px;
@@ -83,41 +83,66 @@ nav h1 {
 .profile-badges-wrap {
   flex: 70%;
 }
-.profile-badges-wrap .profile-badges {
+
+.profile-badges, .repo-badges {
   display: flex;
   justify-content: center;
   margin: 41px 0 30px;
 }
-.profile-badges-wrap .profile-badges .badge {
+.profile-badges .badge, .repo-badges .badge {
   margin: 0 5px;
   border: 1px solid lightgray;
   padding: 5px;
   border-radius: 5px;
 }
-.profile-badges-wrap .profile-badges .badge.badge-blue {
+.profile-badges .badge.badge-blue, .repo-badges .badge.badge-blue {
   border: 1px solid #2196F3;
 }
-.profile-badges-wrap .profile-badges .badge.badge-yellow {
+.profile-badges .badge.badge-yellow, .repo-badges .badge.badge-yellow {
   border: 1px solid orange;
 }
-.profile-badges-wrap .profile-badges .badge.badge-green {
+.profile-badges .badge.badge-green, .repo-badges .badge.badge-green {
   border: 1px solid forestgreen;
 }
-.profile-badges-wrap .profile-badges .badge.badge-purple {
+.profile-badges .badge.badge-purple, .repo-badges .badge.badge-purple {
   border: 1px solid mediumpurple;
 }
-.profile-badges-wrap .profile-about {
+
+.profile-about {
   padding-left: 10px;
 }
-.profile-badges-wrap .profile-about .profile-about-item {
+.profile-about .profile-about-item {
   display: block;
   list-style-type: none;
   border: 1px solid lightgray;
   padding: 8px;
   border-collapse: collapse;
 }
-.profile-badges-wrap .profile-about .profile-about-item:not(:last-child) {
+.profile-about .profile-about-item:not(:last-child) {
   border-bottom: none;
+}
+
+.repo .repo-wrap {
+  border: 1px solid lightgray;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.repo .repo-link {
+  flex: 50%;
+}
+.repo .repo-link a {
+  display: flex;
+  justify-content: center;
+  margin: 41px 0 30px;
+  color: #2196F3;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 10px;
+}
+.repo .repo-badges {
+  flex: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */

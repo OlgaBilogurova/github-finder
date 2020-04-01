@@ -2,6 +2,7 @@ class UI {
     constructor() {
         this.profile = document.getElementById('profile');
         this.msgBox = document.getElementById('message');
+        this.repo = document.getElementById('repo');
     }
 
     showProfile(user){
@@ -46,6 +47,30 @@ class UI {
         this.profile.style.border = '1px solid lightgray';
     }
 
+    showRepos(repos) {
+        let output = '<h2>Latest Repos</h2>';
+
+        // Build UI for repos
+        repos.forEach(repo => {
+            output += `
+                 <div class="repo-wrap">
+                    <div class="repo-link">
+                        <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                    </div>
+                    
+                    <div class="repo-badges">
+                        <span class="badge badge-blue">Stars: ${repo.stargazers_count}</span>
+                        <span class="badge badge-yellow">Watchers: ${repo.watchers_count}</span>
+                        <span class="badge badge-purple">Forks: ${repo.forks_count}</span>
+                    </div>
+                </div>                
+            `;
+        });
+
+        // Insert UI to repo div
+        this.repo.innerHTML = output;
+    }
+
     showAlert(message, className) {
         this.msgBox = document.getElementById('message');
         this.msgBox.classList.add(className);
@@ -67,6 +92,7 @@ class UI {
 
     clearProfile() {
         this.profile.innerHTML = '';
+        this.repo.innerHTML = '';
 
         // Remove border to profile section
         this.profile.style.border = 'none';
