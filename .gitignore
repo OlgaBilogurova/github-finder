@@ -43,8 +43,3 @@ Thumbs.db
 *.txt
 .env
 .sass-cache
-
-# CSS prep #
-######################
-/styles.css.map
-/styles.scss

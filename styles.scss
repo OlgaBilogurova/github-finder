@@ -1,0 +1,153 @@
+.wrapper{
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+nav{
+  padding: 10px 5px;
+  background-color: #2196F3;
+  h1{
+    color: white;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.search, .profile{
+  border: 1px solid lightgray;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+}
+
+.search{
+  text-align: center;
+  background-color: lightgray;
+  input{
+    padding: 10px;
+    width: 350px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    &:focus{
+      outline: none;
+    }
+  }
+}
+
+.message{
+  &.failed{
+    background-color: red;
+    color: white;
+    padding: 10px;
+  }
+}
+
+.profile-info-wrap{
+    flex: 30%;
+    .profile-img{
+      max-width: 300px;
+      img{
+        min-width: 100px;
+        width: 100%;
+        height: auto;
+        display: block;
+        box-shadow: 0 2px 5px lightgrey;
+      }
+      .view-link{
+        display: block;
+        background-color: white;
+        border: 2px solid #2196F3;
+        color: #2196F3;
+        margin: 10px 0;
+        border-radius: 5px;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: .2s ease;
+        &:hover{
+          background-color: #2196F3;
+          border: 2px solid #2196F3;
+          color: white;
+        }
+      }
+    }
+  }
+
+.profile-badges-wrap{
+  flex: 70%;
+}
+
+.profile-badges, .repo-badges{
+  display: flex;
+  justify-content: center;
+  margin: 41px 0 30px;
+
+  .badge{
+    margin: 0 5px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    border-radius: 5px;
+    &.badge-blue{
+      border: 1px solid #2196F3;
+    }
+    &.badge-yellow{
+      border: 1px solid orange;
+    }
+    &.badge-green{
+      border: 1px solid forestgreen;
+    }
+    &.badge-purple{
+      border: 1px solid mediumpurple;
+    }
+  }
+}
+
+.profile-about{
+  padding-left: 10px;
+
+  .profile-about-item{
+    display: block;
+    list-style-type: none;
+    border: 1px solid lightgray;
+    padding: 8px;
+    border-collapse: collapse;
+    &:not(:last-child){
+      border-bottom: none;
+    }
+  }
+}
+
+.repo{
+  .repo-wrap{
+    border: 1px solid lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+  }
+  .repo-link{
+    flex: 50%;
+    a {
+      display: flex;
+      justify-content: center;
+      margin: 41px 0 30px;
+      color: #2196F3;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0 10px;
+    }
+  }
+
+  .repo-badges{
+    flex: 50%;
+  }
+}
