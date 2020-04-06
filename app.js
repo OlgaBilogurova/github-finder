@@ -33,6 +33,8 @@ searchUser.addEventListener('keyup', (e) => {
                 searchUser.value = '';
                 // Show alert message
                 ui.showAlert(error, 'failed');
+                // Clear profile
+                ui.clearProfile();
             });
         } else {
         // Clear profile
