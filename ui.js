@@ -10,6 +10,7 @@ class UI {
         this.clearAlert();
 
         // Validate fields
+        if (user.name === null) user.name = '-';
         if (user.company === null) user.company = '-';
         if (user.blog === '') user.blog = '-';
         if (user.location === null) user.location = '-';
@@ -35,6 +36,7 @@ class UI {
                 </div>
                 
                 <ul class="profile-about">
+                    <li class="profile-about-item">User Name: ${user.name}</li>
                     <li class="profile-about-item">Company: ${user.company}</li>
                     <li class="profile-about-item">Website/Blog: ${user.blog}</li>
                     <li class="profile-about-item">Location: ${user.location}</li>
@@ -50,9 +52,13 @@ class UI {
     showRepos(repos) {
         let output = '<h2>Latest Repos</h2>';
 
-        // Build UI for repos
-        repos.forEach(repo => {
-            output += `
+        if (repos.length === 0) {
+            // Show message
+            output += '<p>Repos not found</p>';
+        } else {
+            // Build UI for repos
+            repos.forEach(repo => {
+                output += `
                  <div class="repo-wrap">
                     <div class="repo-link">
                         <a href="${repo.html_url}" target="_blank">${repo.name}</a>
@@ -65,7 +71,8 @@ class UI {
                     </div>
                 </div>                
             `;
-        });
+            });
+        }
 
         // Insert UI to repo div
         this.repo.innerHTML = output;
