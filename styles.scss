@@ -1,5 +1,5 @@
 .wrapper{
-  margin: 0 auto;
+  margin: 0 auto 20px;
   max-width: 1200px;
   width: 100%;
 }
@@ -7,6 +7,7 @@
 nav{
   padding: 10px 5px;
   background-color: #2196F3;
+  border-radius: 5px;
   h1{
     color: white;
     font-size: 40px;
@@ -18,6 +19,7 @@ nav{
 
 .search, .profile{
   border: 1px solid lightgray;
+  border-radius: 5px;
   margin: 5px 0;
   padding: 10px;
 }
@@ -54,8 +56,8 @@ nav{
     flex: 30%;
     .profile-img{
       max-width: 300px;
+      min-width: 210px;
       img{
-        min-width: 100px;
         width: 100%;
         height: auto;
         display: block;
@@ -69,6 +71,7 @@ nav{
         margin: 10px 0;
         border-radius: 5px;
         text-align: center;
+        letter-spacing: .3px;
         padding: 10px;
         text-decoration: none;
         font-weight: bold;
@@ -89,31 +92,33 @@ nav{
 .profile-badges, .repo-badges{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 41px 0 30px;
 
   .badge{
-    margin: 0 5px;
-    border: 1px solid lightgray;
+    margin: 5px;
+    border: 1.2px solid lightgray;
     padding: 5px;
     border-radius: 5px;
+    font-size: 16.5px;
     &.badge-blue{
-      border: 1px solid #2196F3;
+      border: 1.2px solid #2196F3;
     }
     &.badge-yellow{
-      border: 1px solid orange;
+      border: 1.2px solid orange;
     }
     &.badge-green{
-      border: 1px solid forestgreen;
+      border: 1.2px solid forestgreen;
     }
     &.badge-purple{
-      border: 1px solid mediumpurple;
+      border: 1.2px solid mediumpurple;
     }
   }
 }
 
 .profile-about{
-  padding-left: 10px;
-
+  padding-left: 0;
+  margin-left: 10px;
   .profile-about-item{
     display: block;
     list-style-type: none;
@@ -123,12 +128,19 @@ nav{
     &:not(:last-child){
       border-bottom: none;
     }
+    &:first-child{
+      border-radius: 0 0 5px 5px;
+    }
+    &:first-child{
+      border-radius: 5px 5px 0 0;
+    }
   }
 }
 
 .repo{
   .repo-wrap{
     border: 1px solid lightgray;
+    border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
     margin: 10px 0;
@@ -138,8 +150,9 @@ nav{
     a {
       display: flex;
       justify-content: center;
-      margin: 41px 0 30px;
+      margin: 46px 0 34px;
       color: #2196F3;
+      font-size: 18px;
       text-align: center;
       text-decoration: none;
       font-weight: bold;
@@ -149,5 +162,43 @@ nav{
 
   .repo-badges{
     flex: 50%;
+  }
+}
+
+// Responsive styles
+@media (max-width: 1000px) {
+  .profile-badges{
+    margin: 25px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .profile-badges{
+    margin: 15px 0;
+  }
+  .profile-badges .badge{
+    font-size: 16px;
+  }
+  .profile-info-wrap .profile-img{
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .profile-badges .badge{
+    font-size: 16.5px;
+  }
+}
+
+@media (max-width: 550px){
+  .repo .repo-link, .repo .repo-badges {
+    flex: 100%;
+  }
+  .repo .repo-badges {
+    margin: 15px 0;
+  }
+  .repo .repo-link a{
+    margin: 15px 0 5px;
   }
 }
