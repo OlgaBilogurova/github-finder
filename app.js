@@ -4,12 +4,13 @@ const github = new Github;
 // Init UI
 const ui = new UI;
 
-// Search input
+// Search input, btn
 const searchUser = document.getElementById('searchUser');
+const searchBtn = document.getElementById('searchBtn');
 
 // Search input event listener
-searchUser.addEventListener('keyup', (e) => {
-    const userText = e.target.value;
+searchBtn.addEventListener('click', (e) => {
+    const userText = searchUser.value;
 
     if (userText !== ''){
         // Make http call
@@ -18,8 +19,6 @@ searchUser.addEventListener('keyup', (e) => {
                 if (data.profile.message === 'Not Found') {
                     // Show alert message
                     ui.showAlert('User not found', 'failed');
-                    // Clear input
-                    searchUser.value = '';
                     // Clear profile
                     ui.clearProfile();
                 } else {
@@ -29,8 +28,6 @@ searchUser.addEventListener('keyup', (e) => {
                 }
             })
             .catch(error => {
-                // Clear input
-                searchUser.value = '';
                 // Show alert message
                 ui.showAlert(error, 'failed');
                 // Clear profile

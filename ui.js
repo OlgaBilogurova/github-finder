@@ -36,7 +36,7 @@ class UI {
                 </div>
                 
                 <ul class="profile-about">
-                    <li class="profile-about-item">User Name: ${user.name}</li>
+                    <li class="profile-about-item">Name: ${user.name}</li>
                     <li class="profile-about-item">Company: ${user.company}</li>
                     <li class="profile-about-item">Website/Blog: ${user.blog}</li>
                     <li class="profile-about-item">Location: ${user.location}</li>
